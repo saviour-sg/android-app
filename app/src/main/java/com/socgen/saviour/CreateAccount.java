@@ -17,16 +17,23 @@ public class CreateAccount extends AppCompatActivity {
     Button register;
     FirebaseDatabase db;
 
+    String phone;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_account);
+
+        SharedPreferences sh = getSharedPreferences("DETAILS", MODE_PRIVATE);
+        phone = sh.getString("mobile", null);
+        if(phone!=null){
+            ((TextInputLayout)findViewById(R.id.mobile)).getEditText().setText(phone);
+        }
+
         db = FirebaseDatabase.getInstance();
         register = findViewById(R.id.register);
         register.setOnClickListener(v -> {
-
-            String phone = ((TextInputLayout)findViewById(R.id.mobile)).getEditText().getText().toString();
             String name = ((TextInputLayout)findViewById(R.id.name)).getEditText().getText().toString();
             String empId = ((TextInputLayout)findViewById(R.id.empId)).getEditText().getText().toString();
             String email = ((TextInputLayout)findViewById(R.id.email)).getEditText().getText().toString();

@@ -3,6 +3,7 @@ package com.socgen.saviour;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -21,13 +22,18 @@ import java.util.List;
 public class ViewRequests extends AppCompatActivity {
     ListView list1,list2;
     FirebaseDatabase db;
+    String name,phone,bloodGroup,location;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_requests);
 
-        String phone = "9080093100";
+        SharedPreferences sh = getSharedPreferences("DETAILS", MODE_PRIVATE);
+        name = sh.getString("name", null);
+        phone = sh.getString("mobile", null);
+        bloodGroup = sh.getString("bloodGroup", null);
+        location = sh.getString("location", null);
 
         db = FirebaseDatabase.getInstance();
         DatabaseReference root = db.getReference("");

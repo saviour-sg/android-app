@@ -1,7 +1,11 @@
 package com.socgen.saviour;
 
+
+import static androidx.core.content.ContextCompat.startActivity;
+
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.database.DataSetObserver;
 import android.media.Image;
 import android.util.TypedValue;
@@ -84,7 +88,10 @@ public class RequestListViewAdapter extends BaseAdapter {
             LinearLayout ll = view.findViewById(R.id.units);
 
             int units = Integer.parseInt(request.getUnits());
-            int donatedUnits = request.getDonors().size();
+            int donatedUnits = 0;
+            if(request.getDonors()!=null){
+                donatedUnits = request.getDonors().size();
+            }
             int pendingUnits = units - donatedUnits;
 
 
@@ -112,7 +119,10 @@ public class RequestListViewAdapter extends BaseAdapter {
                         .setTitle("CONFIRMATION")
                         .setMessage("Do you confirm the donation?\n\n\t\tName: "+request.getPatientName()+"\n\t\tBlood Group : "+request.getBloodGroup())
                         .setNegativeButton("NO",null)
-                        .setPositiveButton("YES",null).show();
+                        .setPositiveButton("YES",(dialog, which) -> {
+                            Intent myIntent = new Intent(context, DonorAcceptance.class);
+                            startActivity(context,myIntent,null);
+                        }).show();
 //                Toast.makeText(context,"Donate",Toast.LENGTH_LONG).show();
             });
             call.setOnClickListener(v -> {

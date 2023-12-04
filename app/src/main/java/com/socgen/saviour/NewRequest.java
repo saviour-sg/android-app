@@ -3,6 +3,7 @@ package com.socgen.saviour;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.Toast;
@@ -17,12 +18,19 @@ public class NewRequest extends AppCompatActivity {
 
     Button requestBtn;
     FirebaseDatabase db;
+    String name,phone,bloodGroup,location;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_request);
+
+        SharedPreferences sh = getSharedPreferences("DETAILS", MODE_PRIVATE);
+        name = sh.getString("name", null);
+        phone = sh.getString("mobile", null);
+        bloodGroup = sh.getString("bloodGroup", null);
+        location = sh.getString("location", null);
         db = FirebaseDatabase.getInstance();
         requestBtn = findViewById(R.id.request);
         requestBtn.setOnClickListener(v -> {
@@ -44,7 +52,7 @@ public class NewRequest extends AppCompatActivity {
             request.setUnits(units);
             request.setRelationship(relationship);
             request.setTimestamp(System.currentTimeMillis());
-            request.setRequesterNumber("9080093100");
+            request.setRequesterNumber(phone);
 
             DatabaseReference requestdb = db.getReference("requests");
             String requestId = requestdb.push().getKey();

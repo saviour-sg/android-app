@@ -3,6 +3,7 @@ package com.socgen.saviour;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
@@ -22,8 +23,7 @@ public class HomeActivity extends AppCompatActivity {
 
     FirebaseDatabase db;
     LinearLayout requestBlood, viewRequests;
-
-    //TODO Hello, Name!
+    String name,phone,bloodGroup,location;
 
 
     @Override
@@ -32,10 +32,15 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         SharedPreferences sh = getSharedPreferences("DETAILS", MODE_PRIVATE);
-        String name = sh.getString("name", null);
-        String phone = sh.getString("phone", null);
-        String bloodGroup = sh.getString("bloodGroup", null);
-        String location = sh.getString("location", null);
+         name = sh.getString("name", null);
+         phone = sh.getString("mobile", null);
+         bloodGroup = sh.getString("bloodGroup", null);
+         location = sh.getString("location", null);
+
+         TextView textView = findViewById(R.id.welcome);
+         if(name!=null) {
+             textView.setText("Hello, " + name.toUpperCase());
+         }
 
         requestBlood = findViewById(R.id.request_blood);
         viewRequests = findViewById(R.id.view_requests);
@@ -44,14 +49,20 @@ public class HomeActivity extends AppCompatActivity {
             Animation anim = AnimationUtils.loadAnimation(this, R.anim.fadein);
             requestBlood.startAnimation(anim);
             Handler handler = new Handler();
-            handler.postDelayed(() -> Toast.makeText(HomeActivity.this,"com.socgen.saviour.Request Blood",Toast.LENGTH_LONG).show(), 200);
+            handler.postDelayed(() -> {
+                Intent myIntent = new Intent(HomeActivity.this, NewRequest.class);
+                HomeActivity.this.startActivity(myIntent);
+            }, 200);
         });
 
         viewRequests.setOnClickListener(v -> {
             Animation anim = AnimationUtils.loadAnimation(this, R.anim.fadein);
             viewRequests.startAnimation(anim);
             Handler handler = new Handler();
-            handler.postDelayed(() -> Toast.makeText(HomeActivity.this,"View Requests",Toast.LENGTH_LONG).show(), 200);
+            handler.postDelayed(() ->{
+                Intent myIntent = new Intent(HomeActivity.this, ViewRequests.class);
+                HomeActivity.this.startActivity(myIntent);
+            }, 200);
         });
 
         db = FirebaseDatabase.getInstance();
