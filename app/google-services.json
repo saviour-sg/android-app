@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "317204262414",
+    "firebase_url": "https://saviour-e614d-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "saviour-e614d",
+    "storage_bucket": "saviour-e614d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:317204262414:android:8ac4dd4a51b5451057965f",
+        "android_client_info": {
+          "package_name": "com.socgen.saviour"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbqTo4Evl5aHDAHxBpC7bpa6YJ8ENonI4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

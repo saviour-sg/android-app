@@ -8,10 +8,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="com.socgen.saviour" />
+                  <option name="mobileSdkAppId" value="1:317204262414:android:8ac4dd4a51b5451057965f" />
+                  <option name="projectId" value="saviour-e614d" />
+                  <option name="projectNumber" value="317204262414" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />

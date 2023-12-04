@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10sp"
+    tools:context=".HomeActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="70sp"
+            android:layout_height="70sp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/logo"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="vertical">
+        <TextView
+            android:id="@+id/welcome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter_semibold"
+            android:textSize="18sp"
+            android:text="Hello, "
+            android:textColor="@android:color/black" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter_bold"
+            android:textSize="20sp"
+            android:text="Good Afternoon!"
+            android:textColor="@color/md_theme_light_secondary" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80sp"
+        android:layout_marginTop="30sp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".25"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_extrabold"
+                android:id="@+id/new_requests"
+                android:text="xx"
+                android:textAlignment="center"
+                android:textColor="#000"
+                android:textSize="30sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_semibold"
+                android:text="New \nRequests"
+                android:textAlignment="center"
+                android:textColor="#636363" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".125"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="2dp"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center_horizontal"
+                android:background="#A2A2A2" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".25"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_extrabold"
+                android:id="@+id/units_donated"
+                android:text="xx"
+                android:textAlignment="center"
+                android:textColor="#000"
+                android:textSize="30sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_semibold"
+                android:text="Units \nDonated"
+                android:textAlignment="center"
+                android:textColor="#636363" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".125"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="2dp"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center_horizontal"
+                android:background="#A2A2A2" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".25"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/active_donors"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_extrabold"
+                android:text="xx"
+                android:textAlignment="center"
+                android:textColor="#000"
+                android:textSize="30sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_semibold"
+                android:text="Active \nDonors"
+                android:textAlignment="center"
+                android:textColor="#636363" />
+        </LinearLayout>
+    </LinearLayout>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:contentDescription="heartLine"
+        android:src="@drawable/heart_line" />
+    <LinearLayout
+        android:id="@+id/request_blood"
+        android:layout_width="match_parent"
+        android:layout_height="120sp"
+        android:layout_marginTop="20sp"
+        android:background="@drawable/rounded_background_light"
+        android:clickable="true"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.7"
+            android:fontFamily="@font/inter_extrabold"
+            android:gravity="end|center_vertical"
+            android:paddingRight="20sp"
+            android:text="REQUEST BLOOD"
+            android:textColor="@android:color/white"
+            android:textSize="22sp" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="60sp"
+            android:layout_gravity="start|center_vertical"
+            android:layout_weight="0.3"
+            android:contentDescription="blood_light"
+            android:src="@drawable/three_blood_drops_white" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/view_requests"
+        android:layout_width="match_parent"
+        android:layout_height="120sp"
+        android:layout_marginTop="20sp"
+        android:background="@drawable/rounded_background_dark"
+        android:clickable="true"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.7"
+            android:fontFamily="@font/inter_extrabold"
+            android:gravity="end|center_vertical"
+            android:paddingRight="20sp"
+            android:text="VIEW REQUESTS"
+            android:textColor="@android:color/white"
+            android:textSize="22sp" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="60sp"
+            android:layout_gravity="start|center_vertical"
+            android:layout_weight="0.3"
+            android:src="@drawable/three_blood_drops_dark" />
+    </LinearLayout>
+</LinearLayout>

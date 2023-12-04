@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10sp"
+    tools:context=".ThanksFailure">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_marginTop="30sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter_bold"
+            android:layout_marginStart="5sp"
+            android:textSize="22sp"
+            android:text="IT'S OKAY,"
+            android:textColor="@android:color/black" />
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_extrabold"
+        android:layout_marginStart="5sp"
+        android:textSize="22sp"
+        android:text="GOWREESH"
+        android:textColor="@android:color/black" />
+        </LinearLayout>
+        <ImageView
+            android:layout_marginTop="3sp"
+            android:layout_marginBottom="30sp"
+            android:layout_width="150sp"
+            android:layout_gravity="center"
+            android:layout_height="150sp"
+            android:src="@drawable/logo"/>
+        <TextView
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter_bold"
+            android:layout_marginStart="5sp"
+            android:textSize="20sp"
+            android:text="Thank you for your compassion!"
+            android:textColor="@color/md_theme_light_secondary" />
+        <TextView
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter_semibold"
+            android:layout_margin="15sp"
+            android:layout_marginTop="25sp"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:text="We truly appreciate your desire to donate blood, and it's completely understandable if circumstances prevent you from doing so."
+            android:textColor="@android:color/black" />
+        <TextView
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter_regular"
+            android:layout_marginTop="17sp"
+            android:textSize="14sp"
+            android:text="Your consideration for others is admirable❤️"
+            android:textColor="#8e8e8e" />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/heart_line"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20sp"
+            android:text="CLOSE"
+            android:fontFamily="@font/inter_bold"
+            android:layout_gravity="center"
+            ></Button>
+    </LinearLayout>
+</LinearLayout>
